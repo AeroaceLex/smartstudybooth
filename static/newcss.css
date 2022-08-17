@@ -1,0 +1,53 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 50%;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 100px; /* Added */
+    margin-top: 10px;
+    background-color: white;
+    padding: 30px 30px;
+}
+
+.card-body {
+    padding: 2px 16px;
+}
+
+.card-title {
+    font-size: 30px;
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.btn {
+    color: white;
+    background-color: #fa9f78;
+    outline: none;
+    border: 0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Study Booth</title>
+    <link rel="stylesheet" href="static/newcss.css">
+    <script>
+        var now = new Date().getTime();
+        
+        // Set the date we're counting down to
+        var countDownDate = new Date(now + 2*60*60*1000).getTime();
+        
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            
+          var now = new Date().getTime();  
+            
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+            
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+          // Output the result in an element with id="demo"
+          document.getElementById("demo").innerHTML = hours + "h "
+          + minutes + "m " + seconds + "s ";
+            
+          // If the count down is over, write some text 
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+          }
+        }, 1000);
+
+        // document.getElementById("button").onclick = function {senddoor()};
+        // function senddoor() {
+          // doordata = 1;
+        //}
+
+    </script>
+</head>   
+<html>   
+<body style="background-color: #fa9f78">
+    <div class="card">
+        <div style='font-size: 60px; font-style: oblique'>Study Booth </div>
+        <img src="static/iotimage2.svg" alt="alt" style="width:30%" />
+        <div class="card-body">
+            <p class="card-title">You are logged in!</p>
+            <form method="POST">
+              <input type="submit" class="btn" value="Open Door"></input>
+            </form>
+            <div>Your 2 hours session will end in: </div>
+            <p id="demo"></p>
+
+            <a href="https://localhost10.auth.us-east-1.amazoncognito.com/logout?client_id=1mkqc4nbct1g7o4tphjf7sbkg0&logout_uri=http://localhost:5000/loggedout">Logout</a></p>
+        </div>
+    </div>
+</body>
+</html>  
